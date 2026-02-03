@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Gift 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #2b0a1f, #12000a);
+  overflow:hidden;
+}
+
+/* 🌺 Flowers */
+.flower{
+  position:fixed;
+  top:-30px;
+  font-size:24px;
+  animation: fall linear infinite;
+  pointer-events:none;
+}
+@keyframes fall{
+  to{ transform:translateY(120vh) rotate(360deg); opacity:0; }
+}
+
+/* ❤️ HEART BLAST */
+.heart{
+  position:fixed;
+  font-size:26px;
+  animation: heartBlast 2.5s ease-out forwards;
+  pointer-events:none;
+}
+@keyframes heartBlast{
+  from{
+    transform:translate(0,0) scale(0.6);
+    opacity:1;
+  }
+  to{
+    transform:translate(var(--x), var(--y)) scale(1.6);
+    opacity:0;
+  }
+}
+
+/* 📄 Pages */
+.page{
+  display:none;
+  width:90%;
+  max-width:420px;
+  text-align:center;
+  animation:fade .6s ease;
+}
+.page.active{display:block}
+@keyframes fade{
+  from{opacity:0;transform:scale(.95)}
+  to{opacity:1;transform:scale(1)}
+}
+
+/* 🔴 TEXT */
+h2,p{
+  color:red;
+  text-shadow:0 2px 6px rgba(0,0,0,.6);
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* 🔵 Photo */
+.circle-photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  border:3px solid rgba(255,255,255,.8);
+}
+
+/* 🧸 Teddy */
+.teddy{
+  width:70px;
+  margin:0 auto 10px;
+  display:block;
+}
+
+/* 🔘 Buttons */
+button{
+  margin:18px 10px 0;
+  padding:10px 26px;
+  border:none;
+  border-radius:30px;
+  background:#ff2f7d;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  position:relative;
+}
+.no-btn{
+  position:absolute;
+}
+
+/* 🎉 Result */
+#result{
+  margin-top:20px;
+  font-size:22px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <h2>💝 Open Cutie 💝</h2>
+  <p>Somthing for you🌹</p>
+  <button onclick="next()">Open 💖</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <img class="circle-photo" src="https://i.ibb.co/tM4jTf0R/IMG-20251208-115254-857.jpg">
+  <p>HAPPY VALENTINE'S DAY MY BABY 💝</p>
+  <button onclick="back()">Back</button>
+  <button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>You know what when I saw you first time on call 🤭 you look beautiful 😍.</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>May be I want a bueatyfull GF like you for a life time 🤭🫠...</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>I really like you and I love you soo much my little baby 💞</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>I promise you that I keep you happy 😊</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>I really want you only you......</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>My heart never allow me to loose you 😭......</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 9 -->
+<div class="page">
+  <img class="teddy" src="https://i.ibb.co/hJT9GS5L/file-00000000eb2071faaf0cbaccbe3e52fc.png">
+  <p>My heart suddenly change........</p>
+  <button onclick="back()">Back</button><button onclick="next()">Next</button>
+</div>
+
+<!-- PAGE 10 -->
+<div class="page">
+  <h2>WILL YOU MARRY ME IN FUTURE TRANG 💍</h2>
+
+  <button onclick="yes()">YES 💖</button>
+  <button class="no-btn" onmouseover="runAway(this)">NO 😆</button>
+
+  <div id="result"></div>
+  <button onclick="back()">Back</button>
+</div>
+
+<script>
+/* 🌺 Flower Rain */
+setInterval(()=>{
+  let f=document.createElement("div");
+  f.className="flower";
+  f.innerText="🌺";
+  f.style.left=Math.random()*100+"vw";
+  f.style.animationDuration=10+Math.random()*6+"s";
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),16000);
+},900);
+
+/* Navigation */
+let pages=document.querySelectorAll(".page");
+let i=0;
+function next(){ if(i<pages.length-1){ pages[i++].classList.remove("active"); pages[i].classList.add("active"); } }
+function back(){ if(i>0){ pages[i--].classList.remove("active"); pages[i].classList.add("active"); } }
+
+/* ❤️ YES HEART BLAST */
+function yes(){
+  document.getElementById("result").innerText="Congratulations 🤭🌹";
+
+  for(let i=0;i<40;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerText="❤️";
+    h.style.left="50%";
+    h.style.top="60%";
+    h.style.setProperty("--x",(Math.random()*400-200)+"px");
+    h.style.setProperty("--y",(Math.random()*-400-100)+"px");
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),2500);
+  }
+}
+
+/* 😂 NO RUN */
+function runAway(btn){
+  btn.style.top=Math.random()*200+"px";
+  btn.style.left=Math.random()*200+"px";
+}
+</script>
+
+</body>
+</html>
